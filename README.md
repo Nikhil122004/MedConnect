@@ -1,12 +1,17 @@
-# React + Vite
+Project Title: MedConnect – Smart Healthcare Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project Description:
+MedConnect is an innovative web-based healthcare platform designed to bridge the gap between doctors and patients through a single, user-friendly interface. The platform provides a dual functionality system:
+For Patients:
+Patients can book online appointments, consult top doctors, order medicines, schedule diagnostic tests, and access health check-up packages from the comfort of their homes. It also includes features like nearby hospitals and pharmacy locators, vaccination scheduling, and digital health record management.
+For Doctors:
+Doctors can offer consultation services, manage appointments, and connect with patients online for better accessibility and care delivery.
 
-Currently, two official plugins are available:
+Key Features:
+Appointment booking system with confirmation notifications.
+Services like general consultation, health check-ups, and specialized treatments.
+User authentication for patients and doctors.
+Integrated dashboard for managing appointments.
+Responsive, intuitive UI for seamless experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+MedConnect aims to simplify healthcare access and enhance the doctor-patient experience by leveraging technology for efficient healthcare management.

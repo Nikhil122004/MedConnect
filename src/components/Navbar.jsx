@@ -19,7 +19,7 @@ function Navbar() {
         <li>
           <Link
             to="/auth"
-            style={{ ...styles.authBtn, background: "#860216ff", color: "#fff" }}
+            style={{ ...styles.authBtn, background: "#d60404ff", color: "#fff" }}
           >
             Sign In
           </Link>
@@ -76,7 +76,7 @@ const styles = {
   authBtn: {
     padding: "8px 16px",
     borderRadius: "6px",
-    border: "1px solid #fa1134ff",
+    border: "1.35px solid #0a0506ff",
     color: "#fa1134ff",
     fontWeight: "bold",
     textDecoration: "none",

@@ -39,7 +39,7 @@ function Home() {
 
   return (
     <div>
-      {/* ✅ Landing + Hero Section */}
+      {/*Landing + Hero Section */}
       <section style={styles.landingHeroWrapper}>
         <div style={styles.landingContent}>
           <h1 style={styles.landingTitle}>Welcome to MedConnect</h1>

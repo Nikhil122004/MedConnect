@@ -82,127 +82,63 @@ function Home() {
 
       {/* ✅ Services Section */}
       <section style={styles.servicesSection}>
-        <div style={styles.overlay}></div>
-        <h2 style={styles.servicesTitle}>Our Services</h2>
-        <p style={styles.servicesDescription}>
-          Explore a wide range of healthcare services designed to make your life easier.  
-          From doctor consultations to diagnostic tests and beyond, everything you need is here.
-        </p>
-        <div style={styles.grid}>
-          {services.map((service, index) => (
-            <ServiceCard key={index} service={service} />
-          ))}
-        </div>
-      </section>
+  <h2 style={styles.servicesTitle}>Our Services</h2>
+  <p style={styles.servicesDescription}>
+    Explore a wide range of healthcare services designed to make your life easier.  
+    From doctor consultations to diagnostic tests and beyond, everything you need is here.
+  </p>
+  <div style={styles.grid}>
+    {services.map((service, index) => (
+      <ServiceCard key={index} service={service} />
+    ))}
+  </div>
+</section>
 
-      {/* ✅ Animation Styles */}
-      <style>
-        {`
-          .service-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #fff;
-  transition: all 0.4s ease;
-  border: 1px solid #ccc;
-  box-shadow: 0 6px 12px rgba(250, 17, 52, 0.2);
-  text-align: center;
-  padding: 15px;
-}
+{/* Remove all animations and complex hover effects */}
+<style>
+  {`
+    .service-card {
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-/* Background animation */
-.service-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(180deg, #fa1134, #c40029);
-  z-index: 0;
-  transition: width 0.5s ease;
-  border-radius: 12px;
-}
-.service-card:hover::before {
-  width: 100%;
-}
+    .service-card h3 {
+      color: #000;
+      font-size: 18px;
+      margin: 10px 0;
+    }
 
-/* Hover effects */
-.service-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(250, 17, 52, 0.5);
-}
+    .service-card p {
+      color: #333;
+      font-size: 14px;
+    }
 
-/* Ensure all child elements are above pseudo-element */
-.service-card * {
-  position: relative;
-  z-index: 1;
-  transition: color 0.3s ease;
-}
-
-/* Default text colors */
-.service-card h3 {
-  color: #000;
-  font-size: 18px;
-  margin: 10px 0;
-}
-.service-card p {
-  color: #333;
-  font-size: 14px;
-}
-
-/* On hover, text becomes white */
-.service-card:hover h3,
-.service-card:hover p {
-  color: #fff;
-}
-
-/* Image styles */
-.service-card img {
-  border-radius: 10px;
-  border: 3px solid #fa1134;
-  margin-bottom: 10px;
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-        `}
-      </style>
+    .service-card img {
+      border-radius: 6px;
+      border: 2px solid #fa1134;
+      margin-bottom: 10px;
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+  `}
+</style>
     </div>
   );
 }
 
 function ServiceCard({ service }) {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % service.images.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, [service.images.length]);
-
   return (
     <div className="service-card" style={styles.card}>
-      <div style={styles.sticker}>✔</div>
       <img
-        src={service.images[currentImage]}
+        src={service.images[0]}  // Show only first image
         alt={service.title}
         style={styles.image}
       />
-      <div style={styles.dotsContainer}>
-        {service.images.map((_, idx) => (
-          <span
-            key={idx}
-            onClick={() => setCurrentImage(idx)}
-            style={{
-              ...styles.dot,
-              backgroundColor: idx === currentImage ? "#fa1134" : "#ccc",
-            }}
-          />
-        ))}
-      </div>
       <h3>{service.title}</h3>
       <p>{service.description}</p>
     </div>
@@ -300,7 +236,7 @@ const styles = {
   servicesSection: {
     position: "relative",
     padding: "80px 40px",
-    backgroundImage: "url('/images/h1.jpg')",
+    backgroundImage: "url('/images/A1.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     color: "#fff",

@@ -9,28 +9,12 @@ function AuthPage() {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    const endpoint = isLogin ? "/login" : "/signup";
-
-    try {
-      const res = await fetch(`http://localhost:5000${endpoint}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-      alert(data.message);
-    } catch (err) {
-      console.error(err);
-      alert("Something went wrong!");
-    }
+    alert(`${isLogin ? "Login" : "Sign Up"} successful (Demo)!`);
   };
 
   return (
@@ -70,10 +54,7 @@ function AuthPage() {
         </form>
         <p style={styles.toggleText}>
           {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
-          <span
-            style={styles.toggleLink}
-            onClick={() => setIsLogin(!isLogin)}
-          >
+          <span style={styles.toggleLink} onClick={() => setIsLogin(!isLogin)}>
             {isLogin ? "Sign Up" : "Login"}
           </span>
         </p>
@@ -91,8 +72,8 @@ const styles = {
     background: "linear-gradient(135deg, #f6f2f2ff, #f5eaecff)",
   },
   formBox: {
-    width: "400px",
-    padding: "30px",
+    width: "350px",
+    padding: "25px",
     background: "#fff",
     borderRadius: "10px",
     boxShadow: "0 6px 15px rgba(0,0,0,0.2)",
@@ -105,16 +86,16 @@ const styles = {
   form: {
     display: "flex",
     flexDirection: "column",
-    gap: "15px",
+    gap: "12px",
   },
   input: {
-    padding: "12px",
+    padding: "10px",
     border: "1px solid #ccc",
     borderRadius: "6px",
     fontSize: "16px",
   },
   button: {
-    padding: "12px",
+    padding: "10px",
     background: "#fa1134ff",
     color: "#fff",
     border: "none",

@@ -54,30 +54,8 @@ const WhyChooseUs = () => {
       </p>
       <div style={styles.grid}>
         {features.map((item) => (
-          <div
-            key={item.id}
-            style={{ ...styles.card }}
-            className="custom-card"
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-10px)";
-              e.currentTarget.style.boxShadow = "0 10px 20px rgba(0,0,0,0.2)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.1)";
-            }}
-            onClick={(e) => {
-              const allCards = document.querySelectorAll(".custom-card");
-              allCards.forEach((card) => card.classList.remove("active"));
-              e.currentTarget.classList.add("active");
-            }}
-          >
-            <div
-              style={{
-                ...styles.iconContainer,
-                backgroundColor: item.color,
-              }}
-            >
+          <div key={item.id} style={styles.card}>
+            <div style={{ ...styles.iconContainer, backgroundColor: item.color }}>
               <span style={styles.icon}>{item.icon}</span>
             </div>
             <h3 style={styles.cardTitle}>{item.title}</h3>
@@ -86,20 +64,6 @@ const WhyChooseUs = () => {
           </div>
         ))}
       </div>
-
-      {/* ✅ Add Custom Styles */}
-      <style>
-        {`
-          .custom-card.active {
-            background-color: #c50404ff !important;
-            color: #fff !important;
-          }
-          .custom-card.active h3,
-          .custom-card.active p {
-            color: #fff !important;
-          }
-        `}
-      </style>
     </section>
   );
 };
@@ -129,14 +93,11 @@ const styles = {
     margin: "0 auto",
   },
   card: {
-    position: "relative",
     background: "#fff",
     padding: "30px 20px",
     borderRadius: "16px",
     boxShadow: "0 6px 16px rgba(0, 0, 0, 0.1)",
     textAlign: "center",
-    transition: "all 0.3s ease",
-    cursor: "pointer",
   },
   iconContainer: {
     width: "70px",
@@ -163,15 +124,14 @@ const styles = {
     lineHeight: "1.6",
   },
   number: {
-    position: "absolute",
-    bottom: "15px",
-    right: "15px",
+    marginTop: "10px",
     background: "#060606ff",
     color: "#fff",
-    fontSize: "18px",
+    fontSize: "14px",
     fontWeight: "bold",
     borderRadius: "6px",
     padding: "4px 8px",
+    display: "inline-block",
   },
 };
 
